@@ -1,6 +1,30 @@
-php_ecommerce_app/
-├── index.php
-├── products.json
-└── assets/
-    ├── style.css
-    └── script.js
+#recipe.rb
+package 'apache2'
+package 'php'
+package 'git'
+
+git '/var/www/html/index.php' do
+  repository 'https://github.com/chanmyaelwin2822/e_commerce.git'
+  revision 'master'
+  action :sync
+end
+
+#template '/etc/apache2/sites-available/e_commerce.conf' do
+#  source 'e_commerce.conf.erb'
+#end
+
+#execute 'install_dependencies' do
+#  command 'bundle install'
+#  cwd '/var/www/e_commerce'
+#  action :run
+#end
+
+#execute 'enable_e_commerce' do
+#  command 'a2ensite e_commerce'
+#  notifies :restart, 'service[apache2]', :immediately
+#end
+
+service 'apache2' do
+  action [:enable, :start]
+end
+
