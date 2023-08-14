@@ -1,0 +1,6 @@
+php_ecommerce_app/
+├── index.php
+├── products.json
+└── assets/
+    ├── style.css
+    └── script.js
