@@ -1,0 +1,7 @@
+{
+  "name": "cml/e_commerce",
+  "description": "E commerce application",
+  "require": {
+    "php": ">=7.2"
+  }
+}
